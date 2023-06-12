@@ -1,3 +1,5 @@
+import {IsDesktop} from "./utils/isDesktop";
+
 const baseUrl = "http://127.0.0.1";
 //const baseUrl = "https://www.npu5v5.cn";
 export default {
