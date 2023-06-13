@@ -18,4 +18,6 @@ export default {
     icp: "陕ICP备2022010605号-2",
 
     fontName: "",
+
+    npu_color: 'rgb(39,74,150)',
 }

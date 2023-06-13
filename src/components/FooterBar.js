@@ -1,5 +1,6 @@
 import React from 'react';
 import {Col, Row} from "antd";
+import Globals from "../Globals";
 
 const FooterBar = () => {
     return (
@@ -49,7 +50,7 @@ const FooterBar = () => {
 const styles = {
     all:{
         textAlign: 'center',
-        backgroundColor: 'rgb(31,57,114)',
+        backgroundColor: Globals.npu_color,
     },
     images:{
         marginTop: '2vh',
