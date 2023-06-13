@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewsList = () => {
     return (
-        <div>
+        <div style={{height:'100vh'}}>
 
         </div>
     );
