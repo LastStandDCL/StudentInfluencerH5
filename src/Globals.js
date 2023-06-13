@@ -19,5 +19,5 @@ export default {
 
     fontName: "",
 
-    npu_color: 'rgb(39,74,150)',
+    npu_color: '#2568AF',
 }

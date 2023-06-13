@@ -53,14 +53,14 @@ const NewsSwiper = () => {
                     carouselEL.current.prev();
                 }}
                 icon={<LeftOutlined />}
-            ></Button>
+            />
             <Button
                 style={styles.rightButton}
                 onClick={() => {
                     carouselEL.current.next();
                 }}
                 icon={<RightOutlined />}
-            ></Button>
+            />
         </div>
     );
 };
@@ -96,7 +96,7 @@ const styles = {
         position: 'absolute',
         top: '50%',
         zIndex: 9,
-        opacity: 0.3,
+        opacity: 0.6,
         left: '2%'
     },
     rightButton:{
@@ -110,7 +110,7 @@ const styles = {
         position: 'absolute',
         top: '50%',
         zIndex: 9,
-        opacity: 0.3,
+        opacity: 0.6,
         right: '2%'
     },
     newsText:{
@@ -122,6 +122,9 @@ const styles = {
         left: '0.5%',
         position: 'fixed',
         zIndex:12,
+        backgroundColor: 'rgba(12,29,65,0.4)',
+        boxShadow:'0 0 10px 10px rgba(12,29,65,0.3)',
+        borderRadius: '1vh',
     }
 };
 

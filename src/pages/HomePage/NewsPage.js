@@ -3,6 +3,14 @@ import NewsSwiper from "../../components/HomePage/NewsPage/NewsSwiper";
 import HeaderBar from "../../components/HeaderBar";
 import NewsCard from "../../components/HomePage/NewsPage/NewsCard";
 import NewsList from "../../components/HomePage/NewsPage/NewsList";
+import {Button, FloatButton} from "antd";
+import {
+    CustomerServiceOutlined,
+    DownloadOutlined,
+    FileTextOutlined,
+    QuestionCircleOutlined,
+    SyncOutlined
+} from "@ant-design/icons";
 
 const NewsPage = () => {
 
@@ -15,7 +23,7 @@ const NewsPage = () => {
     const handleScroll = (e) => {
         let scrollTop = document.documentElement.scrollTop;
         let clientHeight = document.documentElement.clientHeight;
-        if(scrollTop >= clientHeight * 0.90 && y < scrollTop && busy){
+        if(scrollTop >= clientHeight * 0.92 && y < scrollTop && busy){
             setBusy(false);
             window.scrollTo(0, clientHeight);
         }
@@ -23,7 +31,7 @@ const NewsPage = () => {
             setBusy(false);
             window.scrollTo(0, 0);
         }
-        if(scrollTop > 0 && scrollTop < clientHeight * 0.50 && y < scrollTop && !busy){
+        if(scrollTop > 0 && scrollTop < clientHeight * 0.95 && y < scrollTop && !busy){
             setBusy(true);
             window.scrollTo({
                 left: 0,
@@ -68,6 +76,7 @@ const NewsPage = () => {
                     <NewsList/>
                 </div>
             </div>
+            <FloatButton.BackTop tooltip={"返回顶部"} visibilityHeight={100}/>
         </div>
     );
 };
