@@ -1,10 +1,10 @@
 import React from 'react';
-import HeaderBar from "../../components/HeaderBar";
+import HomeHeaderBar from "../../components/HomePage/HomeHeaderBar";
 
 const ImagePage = () => {
     return (
         <div>
-            <HeaderBar lightMode={false}/>
+            <HomeHeaderBar lightMode={false}/>
 
         </div>
     );

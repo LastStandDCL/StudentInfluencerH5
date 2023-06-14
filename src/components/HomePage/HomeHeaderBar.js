@@ -1,10 +1,10 @@
 import React from 'react';
 import {Button, Col, Row} from 'antd';
 import {AppstoreOutlined, EditOutlined, HomeOutlined, TeamOutlined} from "@ant-design/icons";
-import Globals from "../Globals";
+import Globals from "../../Globals";
 import {useNavigate} from "react-router-dom";
 
-const HeaderBar = (props) => {
+const HomeHeaderBar = (props) => {
     const {lightMode} = props;
 
     const navigate = useNavigate();
@@ -128,4 +128,4 @@ const HeaderBar = (props) => {
     );
 };
 
-export default HeaderBar;
+export default HomeHeaderBar;

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import NewsSwiper from "../../components/HomePage/NewsPage/NewsSwiper";
-import HeaderBar from "../../components/HeaderBar";
+import HomeHeaderBar from "../../components/HomePage/HomeHeaderBar";
 import NewsCard from "../../components/HomePage/NewsPage/NewsCard";
 import NewsList from "../../components/HomePage/NewsPage/NewsList";
 import {Button, FloatButton} from "antd";
@@ -63,7 +63,7 @@ const NewsPage = () => {
     return (
         <div style={{backgroundColor:'rgb(240,240,240)'}}>
             <div style={styles.header}>
-                <HeaderBar lightMode={lightMode}/>
+                <HomeHeaderBar lightMode={lightMode}/>
             </div>
             <div style={styles.swiper}>
                 <NewsSwiper/>
