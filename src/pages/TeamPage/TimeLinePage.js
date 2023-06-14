@@ -59,10 +59,17 @@ const TimeLinePage = () => {
         border: `1px dashed ${token.colorBorder}`,
         marginTop: 16,
     };
+
     return (
         <div style={{margin: '2%', zIndex:20}}>
-            <p>活动年份：</p>
-            <Cascader options={options} onChange={onChange} placeholder="活动年份" defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}/>
+            <Row>
+                <Col span={2}>
+                    <p>活动年份：</p>
+                </Col>
+                <Col span={6} style={{marginTop:'1vh'}}>
+                    <Cascader options={options} onChange={onChange} placeholder="活动年份" defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}/>
+                </Col>
+            </Row>
             <p style={{
                 color: Globals.npu_color,
                 fontSize: '3vh',
@@ -73,7 +80,7 @@ const TimeLinePage = () => {
             <Steps current={current} items={items} />
             <Row gutter={16} style={{textAlign:'center',marginTop:'4vh'}}>
                 <Col span={12}>
-                    <Statistic title="该阶段日期" value={'2023-10-5'} prefix={<CalendarOutlined />} />
+                    <Statistic title="该阶段截止日期" value={'2023-10-5'} prefix={<CalendarOutlined />} />
                 </Col>
                 <Col span={12}>
                     <Statistic title="以完成该阶段队伍数" value={93} suffix="/ 100" />

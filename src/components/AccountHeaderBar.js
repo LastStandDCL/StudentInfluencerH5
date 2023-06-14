@@ -31,6 +31,7 @@ const HomeHeaderBar = () => {
             marginTop: '1vh',
             marginLeft: '2vh',
             height:"6vh",
+            zIndex: 500,
         },
         menu:{
             color: Globals.npu_color,
@@ -41,7 +42,7 @@ const HomeHeaderBar = () => {
             fontWeight:"bold",
         },
         background:{
-            backgroundColor: "rgba(255,255,255,1)",
+            backgroundColor: "rgba(255,255,255)",
             boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
             zIndex: 200,
         },

@@ -1,12 +1,19 @@
 export default [
     {
-        provinceName: '直辖市',
-        cities:[
-            '北京市',
-            '天津市',
-            '上海市',
-            '重庆市',
-        ]
+        provinceName: '不限制',
+    },
+    {
+        provinceName: '北京市',
+    },
+    {
+        provinceName: '天津市',
+    },
+    {
+        provinceName: '上海市',
+    },
+    {
+        provinceName: '重庆市',
+
     },
     {
         provinceName: '河北省',

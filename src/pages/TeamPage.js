@@ -61,6 +61,7 @@ const TeamPage = () => {
                    position: "fixed",
                    width: '100vw',
                    height: '7.5vh',
+                   zIndex: 100,
                }}
            >
                <AccountHeaderBar/>
@@ -73,10 +74,10 @@ const TeamPage = () => {
                         style={{
                             background: colorBgContainer,
                             position: "fixed",
-                            zIndex: 100,
                         }}
                     >
                         <Menu
+                            style={{zIndex: 100,}}
                             onClick={onClick}
                             defaultSelectedKeys={()=>{
                                 const hrefStr = window.location.href;
@@ -104,6 +105,7 @@ const TeamPage = () => {
                                 marginRight: '5%',
                                 marginTop: '1%',
                                 background: colorBgContainer,
+                                zIndex: 0
                             }}
                         >
                             <Outlet/>
