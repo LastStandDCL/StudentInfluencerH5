@@ -1,4 +1,4 @@
-import {UserOutlined} from '@ant-design/icons';
+import {BlockOutlined, TeamOutlined, UserOutlined} from '@ant-design/icons';
 import {Layout, Menu, theme} from 'antd';
 import React from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
@@ -21,13 +21,13 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-    getItem('所有团队', '1', <UserOutlined />, [
+    getItem('所有团队', '1', <BlockOutlined />, [
         getItem('活动时间线', '/team/timeline'),
         getItem('团队列表', '/team/teams'),
         getItem('创建团队', '/team/new'),
         //getItem('团队提交物排名', '/team/rank'),
     ]),
-    getItem('我的团队', '2', <UserOutlined />, [
+    getItem('我的团队', '2', <TeamOutlined />, [
         getItem('团队主页', '/team/my-team'),
         getItem('活动材料申领', '/team/material'),
         getItem('活动照片记录','/team/team-images'),
@@ -73,6 +73,7 @@ const TeamPage = () => {
                         style={{
                             background: colorBgContainer,
                             position: "fixed",
+                            zIndex: 100,
                         }}
                     >
                         <Menu
@@ -99,9 +100,9 @@ const TeamPage = () => {
                     >
                         <Content
                             style={{
-                                padding: 24,
-                                margin: 20,
-                                minHeight: 280,
+                                marginLeft: '5%',
+                                marginRight: '5%',
+                                marginTop: '1%',
                                 background: colorBgContainer,
                             }}
                         >

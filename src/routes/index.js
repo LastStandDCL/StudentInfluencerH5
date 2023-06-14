@@ -1,7 +1,7 @@
 import NewsPage from "../pages/HomePage/NewsPage";
 import TeamHomePage from "../pages/TeamPage/TeamHomePage";
 import TeamsListPage from "../pages/TeamPage/TeamsListPage";
-import PersonPage from "../pages/TeamPage/PersonPage";
+import ProfiilePage from "../pages/TeamPage/ProfiilePage";
 import ImagePage from "../pages/HomePage/ImagePage";
 import MaterialPage from "../pages/TeamPage/MaterialPage";
 import CertificatePage from "../pages/TeamPage/CertificatePage";
@@ -130,7 +130,7 @@ const routes = [
             },
             {
                 path:"my-profile",
-                element: <PersonPage/>,
+                element: <ProfiilePage/>,
                 meta: {
                     auth: true,
                 }

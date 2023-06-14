@@ -43,6 +43,7 @@ const HomeHeaderBar = () => {
         background:{
             backgroundColor: "rgba(255,255,255,1)",
             boxShadow: "2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
+            zIndex: 200,
         },
     }
 
@@ -54,6 +55,7 @@ const HomeHeaderBar = () => {
                         style={styles.logo}
                         src="https://tomcat-oss.oss-cn-beijing.aliyuncs.com/ruan_zong/ds_logo.png"
                         alt="ds_logo"
+                        onClick={() => navigate('/home/news')}
                     />
                 </Col>
                 <div

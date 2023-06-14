@@ -84,6 +84,7 @@ const HomeHeaderBar = (props) => {
                             :
                             "https://tomcat-oss.oss-cn-beijing.aliyuncs.com/ruan_zong/ds_logo.png"}
                         alt="ds_logo"
+                        onClick={() => navigate('/home/news')}
                     />
                 </Col>
                 <Col span={8}>
