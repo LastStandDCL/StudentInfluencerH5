@@ -3,14 +3,7 @@ import NewsSwiper from "../../components/HomePage/NewsPage/NewsSwiper";
 import HomeHeaderBar from "../../components/HomePage/HomeHeaderBar";
 import NewsCard from "../../components/HomePage/NewsPage/NewsCard";
 import NewsList from "../../components/HomePage/NewsPage/NewsList";
-import {Button, FloatButton} from "antd";
-import {
-    CustomerServiceOutlined,
-    DownloadOutlined,
-    FileTextOutlined,
-    QuestionCircleOutlined,
-    SyncOutlined
-} from "@ant-design/icons";
+import {FloatButton} from "antd";
 
 const NewsPage = () => {
 

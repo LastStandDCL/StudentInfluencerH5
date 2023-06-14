@@ -62,22 +62,14 @@ const UsernamePasswordLogin = () => {
                 </Button>
             </Form.Item>
             <Form.Item>
-                <ConfigProvider
-                    theme={{
-                        token: {
-                            colorPrimary: Globals.npu_color,
-                        },
-                    }}
+                <Button
+                    type="primary"
+                    htmlType="submit"
+                    className="login-form-button"
+                    style={{width: '100%'}}
                 >
-                    <Button
-                        type="primary"
-                        htmlType="submit"
-                        className="login-form-button"
-                        style={{width: '100%'}}
-                    >
-                        登录
-                    </Button>
-                </ConfigProvider>
+                    登录
+                </Button>
             </Form.Item>
         </Form>
     );

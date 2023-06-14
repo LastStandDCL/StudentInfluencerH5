@@ -53,15 +53,7 @@ const ValidateCodeLogin = () => {
                         />
                     </Col>
                     <Col span={10}>
-                        <ConfigProvider
-                            theme={{
-                                token: {
-                                    colorPrimary: Globals.npu_color,
-                                },
-                            }}
-                        >
-                            <Button type='primary' style={{marginTop:'0.3vh'}}>发送验证码</Button>
-                        </ConfigProvider>
+                        <Button type='primary' style={{marginTop:'0.3vh'}}>发送验证码</Button>
                     </Col>
                 </Row>
             </Form.Item>

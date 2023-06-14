@@ -1,81 +1,106 @@
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import {UserOutlined} from '@ant-design/icons';
+import {Layout, Menu, theme} from 'antd';
 import React from 'react';
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import FooterBar from "../components/FooterBar";
 import AccountHeaderBar from "../components/AccountHeaderBar";
 
 const {
-    Header,
     Content,
     Sider,
 } = Layout;
 
-const items1 = ['1', '2', '3'].map((key) => ({
-    key,
-    label: `nav ${key}`,
-}));
-
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-    const key = String(index + 1);
+function getItem(label, key, icon, children, type) {
     return {
-        key: `sub${key}`,
-        icon: React.createElement(icon),
-        label: `subnav ${key}`,
-        children: new Array(4).fill(null).map((_, j) => {
-            const subKey = index * 4 + j + 1;
-            return {
-                key: subKey,
-                label: `option${subKey}`,
-            };
-        }),
+        key,
+        icon,
+        children,
+        label,
+        type,
     };
-});
+}
+
+const items = [
+    getItem('所有团队', '1', <UserOutlined />, [
+        getItem('活动时间线', '/team/timeline'),
+        getItem('团队列表', '/team/teams'),
+        getItem('创建团队', '/team/new'),
+        //getItem('团队提交物排名', '/team/rank'),
+    ]),
+    getItem('我的团队', '2', <UserOutlined />, [
+        getItem('团队主页', '/team/my-team'),
+        getItem('活动材料申领', '/team/material'),
+        getItem('活动照片记录','/team/team-images'),
+        getItem('活动通讯稿上传', '/team/passage'),
+        getItem('个人总结报告提交', '/team/upload-my-report'),
+        getItem('团队中期报告提交', '/team/upload-mid-report'),
+        getItem('团队总结报告提交', '/team/upload-final-report'),
+    ]),
+    getItem('我的事务', '3', <UserOutlined />, [
+        getItem('活动证书下载', '/team/certificate'),
+        getItem('修改个人信息', '/team/my-profile'),
+    ]),
+];
+
 const TeamPage = () => {
+
+    const navigate = useNavigate();
+
+    const onClick = (e) => {
+        navigate(e.key);
+    };
+
     const {
         token: { colorBgContainer },
     } = theme.useToken();
 
     return (
         <div>
-            <AccountHeaderBar/>
-            <Layout style={{height: "100vh"}}>
+           <div
+               style={{
+                   position: "fixed",
+                   width: '100vw',
+                   height: '7.5vh',
+               }}
+           >
+               <AccountHeaderBar/>
+           </div>
+            <div style={{height: '7.5vh'}}/>
+            <Layout style={{height: "100vh", marginTop:'2px'}}>
                 <Layout>
                     <Sider
-                        width={200}
+                        width='16vw'
                         style={{
                             background: colorBgContainer,
+                            position: "fixed",
                         }}
                     >
                         <Menu
-                            mode="inline"
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
-                            style={{
-                                height: '100%',
-                                borderRight: 0,
+                            onClick={onClick}
+                            defaultSelectedKeys={()=>{
+                                const hrefStr = window.location.href;
+                                const urlParams = new URL(hrefStr);
+                                return urlParams?.pathname;
                             }}
-                            items={items2}
+                            defaultOpenKeys={['1','2','3']}
+                            mode="inline"
+                            items={items}
                         />
                     </Sider>
+                    <div
+                        style={{
+                            width: '17%',
+                        }}
+                    />
                     <Layout
                         style={{
                             padding: '0 24px 24px',
                         }}
                     >
-                        <Breadcrumb
-                            style={{
-                                margin: '16px 0',
-                            }}
-                        >
-                            <Breadcrumb.Item>Home</Breadcrumb.Item>
-                            <Breadcrumb.Item>List</Breadcrumb.Item>
-                            <Breadcrumb.Item>App</Breadcrumb.Item>
-                        </Breadcrumb>
                         <Content
                             style={{
                                 padding: 24,
-                                margin: 0,
+                                margin: 20,
                                 minHeight: 280,
                                 background: colorBgContainer,
                             }}

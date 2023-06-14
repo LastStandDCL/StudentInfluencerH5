@@ -1,50 +1,30 @@
 import React from 'react';
-import {Avatar, Col, Dropdown, Row, Tooltip, message} from 'antd';
+import {Avatar, Col, Dropdown, Row, Space, Button} from 'antd';
 import Globals from "../Globals";
 import {useNavigate} from "react-router-dom";
-import {UserOutlined} from "@ant-design/icons";
+import {DownOutlined, LockOutlined, RollbackOutlined, UserOutlined} from "@ant-design/icons";
 
-const handleButtonClick = (e) => {
-    message.info('Click on left button.');
-    console.log('click left button', e);
-};
-const handleMenuClick = (e) => {
-    message.info('Click on menu item.');
-    console.log('click', e);
-};
 const items = [
     {
-        label: '1st menu item',
-        key: '1',
-        icon: <UserOutlined />,
-    },
-    {
-        label: '2nd menu item',
-        key: '2',
-        icon: <UserOutlined />,
-    },
-    {
-        label: '3rd menu item',
-        key: '3',
-        icon: <UserOutlined />,
+        label: '退出登录',
+        key: '/home/news',
+        icon: <RollbackOutlined />,
         danger: true,
-    },
-    {
-        label: '4rd menu item',
-        key: '4',
-        icon: <UserOutlined />,
-        danger: true,
-        disabled: true,
     },
 ];
-const menuProps = {
-    items,
-    onClick: handleMenuClick,
-};
 
 const HomeHeaderBar = () => {
 
     const navigate = useNavigate();
+
+    const handleMenuClick = (e) => {
+        navigate(e.key);
+    };
+
+    const menuProps = {
+        items,
+        onClick: handleMenuClick,
+    };
 
     const styles = {
         logo: {
@@ -80,30 +60,27 @@ const HomeHeaderBar = () => {
                     style={{
                         position: 'absolute',
                         right: '2%',
-                        marginTop: '2vh',
+                        marginTop: '1vh',
                     }}
                 >
-                    <Dropdown.Button
-                        menu={menuProps}
-                        buttonsRender={([leftButton, rightButton]) => [
-                            <Tooltip title="tooltip" key="leftButton">
-                                {leftButton}
-                            </Tooltip>,
-                            React.cloneElement(rightButton, {
-                                loading: true,
-                            }),
-                        ]}
-                    >
-                        With Tooltip
-                    </Dropdown.Button>
-                    <Avatar
-                        style={{
-                            backgroundColor: '#fde3cf',
-                            color: '#f56a00',
-                        }}
-                    >
-                        王
-                    </Avatar>
+                    <Dropdown menu={menuProps}>
+                        <Button
+                            style={{height: '5vh', borderWidth:'0'}}
+                        >
+                            <Space>
+                                早上好！2020300849
+                                <Avatar
+                                    style={{
+                                        backgroundColor: '#fde3cf',
+                                        color: '#f56a00',
+                                    }}
+                                >
+                                    王
+                                </Avatar>
+                                <DownOutlined />
+                            </Space>
+                        </Button>
+                    </Dropdown>
                 </div>
             </Row>
 

@@ -1,9 +1,8 @@
 import React from 'react';
-import {Button, Col, ConfigProvider, Form, Input, Row} from "antd";
+import {Button, Col, Form, Input, Row} from "antd";
 
 import {useNavigate} from "react-router-dom";
 import {FieldNumberOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
-import Globals from "../../Globals";
 
 const RegisterPage = () => {
 
@@ -71,15 +70,7 @@ const RegisterPage = () => {
                                 />
                             </Col>
                             <Col span={10}>
-                                <ConfigProvider
-                                    theme={{
-                                        token: {
-                                            colorPrimary: Globals.npu_color,
-                                        },
-                                    }}
-                                >
-                                    <Button type='primary' style={{marginTop:'0.3vh'}}>发送验证码</Button>
-                                </ConfigProvider>
+                                <Button type='primary' style={{marginTop:'0.3vh'}}>发送验证码</Button>
                             </Col>
                         </Row>
                     </Form.Item>
@@ -116,13 +107,7 @@ const RegisterPage = () => {
                         />
                     </Form.Item>
                     <Form.Item>
-                        <ConfigProvider
-                            theme={{
-                                token: {
-                                    colorPrimary: Globals.npu_color,
-                                },
-                            }}
-                        >
+
                             <Button
                                 type="primary"
                                 htmlType="submit"
@@ -131,7 +116,6 @@ const RegisterPage = () => {
                             >
                                 注册
                             </Button>
-                        </ConfigProvider>
                     </Form.Item>
                 </Form>
             </Col>

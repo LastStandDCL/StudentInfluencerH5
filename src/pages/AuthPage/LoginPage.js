@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Col, ConfigProvider, Menu, Row, Space} from "antd";
+import {Button, Col, Menu, Row, Space} from "antd";
 import UsernamePasswordLogin from "../../components/AuthPage/UsernamePasswordLogin";
 import ValidateCodeLogin from "../../components/AuthPage/ValidateCodeLogin";
 import {useNavigate} from "react-router-dom";
@@ -42,20 +42,12 @@ const LoginPage = () => {
                 </Col>
                 <Col span={1}/>
                 <Col span={23}>
-                    <ConfigProvider
-                        theme={{
-                            token: {
-                                colorPrimary: Globals.npu_color,
-                            },
-                        }}
-                    >
                         <Menu
                             onClick={()=>setIsOne(!isOne)}
                             selectedKeys={isOne ? 'password' : 'mail'}
                             mode="horizontal"
                             items={items}
                         />
-                    </ConfigProvider>
                 </Col>
                 <Col span={4}/>
                 <Col span={16}>

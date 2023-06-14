@@ -8,24 +8,26 @@ const AuthPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div style={authStyle}>
-            <div style={frameStyle}>
-                <Row>
-                    <Col
-                        span={12}
-                        onClick={() => navigate('/home/news')}
-                    >
-                        <img
-                            src="https://www.nwpu.edu.cn/images/logo2.png" alt="logo"
-                            style={{width: "100%", marginTop: "10%", marginLeft: "10%"}}
-                        />
-                    </Col>
-                    <Col span={12}/>
-                </Row>
-                <Outlet class="outlet" style={{margin: "2ex"}}/>
-                <br/>
+        <div>
+            <div style={authStyle}>
+                <div style={frameStyle}>
+                    <Row>
+                        <Col
+                            span={12}
+                            onClick={() => navigate('/home/news')}
+                        >
+                            <img
+                                src="https://www.nwpu.edu.cn/images/logo2.png" alt="logo"
+                                style={{width: "100%", marginTop: "10%", marginLeft: "10%"}}
+                            />
+                        </Col>
+                        <Col span={12}/>
+                    </Row>
+                    <Outlet class="outlet" style={{margin: "2ex"}}/>
+                    <br/>
+                </div>
             </div>
-            <div style={{position: "absolute", bottom: "-19.8vh",width: "100%"}}>
+            <div style={{width: "100%", bottom:"-16ex",position:"absolute"}}>
                 <FooterBar/>
             </div>
         </div>

@@ -27,6 +27,8 @@ import AdminPage from "../pages/AdminPage";
 import TeamPage from "../pages/TeamPage";
 import UploadPassagePage from "../pages/TeamPage/UploadPassagePage";
 import TeamImagesPage from "../pages/TeamPage/TeamImagesPage";
+import CreateTeam from "../pages/TeamPage/CreateTeam";
+import TimeLinePage from "../pages/TeamPage/TimeLinePage";
 
 const routes = [
     {
@@ -106,6 +108,20 @@ const routes = [
                 }
             },
             {
+                path:"new",
+                element: <CreateTeam/>,
+                meta: {
+                    auth: true,
+                }
+            },
+            {
+                path:"timeline",
+                element: <TimeLinePage/>,
+                meta: {
+                    auth: true,
+                }
+            },
+            {
                 path:"my-team",
                 element: <TeamHomePage/>,
                 meta: {
@@ -113,7 +129,7 @@ const routes = [
                 }
             },
             {
-                path:"my-info",
+                path:"my-profile",
                 element: <PersonPage/>,
                 meta: {
                     auth: true,
