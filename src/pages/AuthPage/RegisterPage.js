@@ -29,7 +29,7 @@ const RegisterPage = () => {
             });
             return;
         }
-        postWithoutToken("",{
+        postWithoutToken("/mails/sendRegisterCode",{
             email: email,
         }).then((response) => {
             if(response.status === 200){
@@ -56,6 +56,13 @@ const RegisterPage = () => {
             messageApi.open({
                 type: 'error',
                 content: '帐号或验证码不能为空',
+            });
+            return;
+        }
+        if(password !== passwordAgain){
+            messageApi.open({
+                type: 'error',
+                content: '两次密码输入不一致，请确认！',
             });
             return;
         }
