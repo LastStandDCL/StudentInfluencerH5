@@ -26,10 +26,16 @@ const UsernamePasswordLogin = () => {
             password: password,
             validateCode: '',
             useCode: false,
-            'remember-me': rememberMe,
+            'remember-me': rememberMe ? 'on': 'off',
         }).then((response) => {
-            if(response.status === 200){
-                DsLocalStorage.setEnhanceUser(response.data);
+            let code = response.data.code;
+            console.log(code);
+            if(code === '200'){
+                messageApi.open({
+                    type: 'success',
+                    content: '登录成功',
+                });
+                navigate('/team/my-team');
             }
         }).catch(e => {
             messageApi.open({
@@ -90,7 +96,7 @@ const UsernamePasswordLogin = () => {
                     />
                 </Form.Item>
                 <Form.Item>
-                    <Form.Item name="remember" noStyle>
+                    <Form.Item name="remember-me" noStyle>
                         <Checkbox
                             checked={rememberMe}
                             onChange={(e)=> {

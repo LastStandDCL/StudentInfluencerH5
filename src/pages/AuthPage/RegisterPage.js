@@ -71,8 +71,29 @@ const RegisterPage = () => {
             password: password,
             validateCode: validateCode,
         }).then((response) => {
-            if(response.status === 200){
-                DsLocalStorage.setEnhanceUser(response.data);
+            if(response.data.code === 200){
+                messageApi.open({
+                    type: 'success',
+                    content: '注册成功',
+                });
+                postWithoutToken("/user/login",{
+                    email: email,
+                    password: password,
+                    validateCode: '',
+                    useCode: false,
+                    'remember-me': 'false',
+                }).then((response) => {
+                    if(response.status === 200){
+                        //DsLocalStorage.setEnhanceUser(response.data);
+                        console.log(response);
+                        //navigate('/team/my-profile');
+                    }
+                }).catch(e => {
+                    messageApi.open({
+                        type: 'error',
+                        content: '连接服务器失败，Error：502',
+                    });
+                })
             }
         }).catch(e => {
             messageApi.open({

@@ -33,7 +33,7 @@ const ValidateCodeLogin = () => {
             });
             return;
         }
-        postWithoutToken("",{
+        postWithoutToken("/mails/sendLoginCode",{
             email: email,
         }).then((response) => {
             if(response.status === 200){
@@ -68,10 +68,16 @@ const ValidateCodeLogin = () => {
             password: '',
             validateCode: validateCode,
             useCode: true,
-            rememberMe: rememberMe,
+            'remember-me': rememberMe ? 'on': 'off',
         }).then((response) => {
-            if(response.status === 200){
-                DsLocalStorage.setEnhanceUser(response.data);
+            console.log(response.data.code);
+            if(response.data.code === 200){
+                console.log('1')
+                messageApi.open({
+                    type: 'success',
+                    content: '登录成功',
+                });
+                navigate('/team/my-team');
             }
         }).catch(e => {
             messageApi.open({

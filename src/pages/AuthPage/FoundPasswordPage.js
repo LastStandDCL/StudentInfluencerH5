@@ -32,7 +32,7 @@ const FoundPasswordPage = () => {
         postWithoutToken("",{
             email: email,
         }).then((response) => {
-            if(response.status === 200){
+            if(response.data.code === 200){
                 messageApi.open({
                     type: 'success',
                     content: '验证码发送成功',
