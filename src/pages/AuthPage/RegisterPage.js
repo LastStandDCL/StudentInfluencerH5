@@ -4,7 +4,7 @@ import {Button, Col, Form, Input, message, Row} from "antd";
 import {useNavigate} from "react-router-dom";
 import {FieldNumberOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import {postWithoutToken} from "../../utils/Rq";
-import DsLocalStorage from "../../utils/DsLocalStorage";
+import {setDsEmail, setDsRoles, setDsToken} from "../../utils/DsLocalStorage";
 
 const RegisterPage = () => {
 
@@ -84,9 +84,10 @@ const RegisterPage = () => {
                     'remember-me': 'false',
                 }).then((response) => {
                     if(response.status === 200){
-                        //DsLocalStorage.setEnhanceUser(response.data);
-                        console.log(response);
-                        //navigate('/team/my-profile');
+                        setDsEmail(response.data.userInfo.user.email);
+                        setDsToken(response.data.token);
+                        setDsRoles(response.data.userInfo.roles);
+                        navigate('/team/my-profile');
                     }
                 }).catch(e => {
                     messageApi.open({

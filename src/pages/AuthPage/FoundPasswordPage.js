@@ -4,7 +4,6 @@ import {Button, Col, ConfigProvider, Form, Input, message, Row} from "antd";
 import {FieldNumberOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import Globals from "../../Globals";
 import {postWithoutToken} from "../../utils/Rq";
-import DsLocalStorage from "../../utils/DsLocalStorage";
 
 const FoundPasswordPage = () => {
 
@@ -65,7 +64,6 @@ const FoundPasswordPage = () => {
             validateCode: validateCode,
         }).then((response) => {
             if(response.status === 200){
-                DsLocalStorage.setEnhanceUser(response.data);
             }
         }).catch(e => {
             messageApi.open({

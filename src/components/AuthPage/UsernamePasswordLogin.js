@@ -3,7 +3,9 @@ import {Button, Checkbox, Form, Input, message} from "antd";
 import {LockOutlined, MailOutlined} from "@ant-design/icons";
 import {useNavigate} from "react-router-dom";
 import {postWithoutToken} from "../../utils/Rq";
-import DsLocalStorage from "../../utils/DsLocalStorage";
+import {
+    setDsEmail, setDsRoles, setDsToken,
+} from "../../utils/DsLocalStorage";
 
 const UsernamePasswordLogin = () => {
 
@@ -29,13 +31,20 @@ const UsernamePasswordLogin = () => {
             'remember-me': rememberMe ? 'on': 'off',
         }).then((response) => {
             let code = response.data.code;
-            console.log(code);
             if(code === '200'){
+                setDsEmail(response.data.userInfo.user.email);
+                setDsToken(response.data.token);
+                setDsRoles(response.data.userInfo.roles);
                 messageApi.open({
                     type: 'success',
                     content: '登录成功',
                 });
-                navigate('/team/my-team');
+                //navigate('/team/my-team');
+            }else {
+                messageApi.open({
+                    type: 'error',
+                    content: '帐号或密码有误',
+                });
             }
         }).catch(e => {
             messageApi.open({

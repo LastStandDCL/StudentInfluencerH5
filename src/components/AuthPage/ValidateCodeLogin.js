@@ -10,7 +10,7 @@ import {
     Row} from "antd";
 import {FieldNumberOutlined, MailOutlined} from "@ant-design/icons";
 import {postWithoutToken} from "../../utils/Rq";
-import DsLocalStorage from "../../utils/DsLocalStorage";
+import DsLocalStorage, {setDsEmail, setDsRoles, setDsToken} from "../../utils/DsLocalStorage";
 
 const ValidateCodeLogin = () => {
 
@@ -70,14 +70,22 @@ const ValidateCodeLogin = () => {
             useCode: true,
             'remember-me': rememberMe ? 'on': 'off',
         }).then((response) => {
-            console.log(response.data.code);
-            if(response.data.code === 200){
-                console.log('1')
+            let code = response.data.code;
+            console.log(code);
+            if(code === '200'){
                 messageApi.open({
                     type: 'success',
                     content: '登录成功',
                 });
+                setDsEmail(response.data.userInfo.user.email);
+                setDsToken(response.data.token);
+                setDsRoles(response.data.userInfo.roles);
                 navigate('/team/my-team');
+            }else {
+                messageApi.open({
+                    type: 'error',
+                    content: '帐号或密码有误',
+                });
             }
         }).catch(e => {
             messageApi.open({

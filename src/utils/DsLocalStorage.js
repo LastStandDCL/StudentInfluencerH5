@@ -1,30 +1,24 @@
-
-const setEnhanceUser = (user) => {
-    setEmail(user.email);
-    setToken(user.token);
-    setRoles(user.roles);
-}
-const getEmail = () => {
+export const getDsEmail = () => {
     return localStorage.getItem("npu_ds_email");
 }
 
-const setEmail = (email) => {
+export const setDsEmail = (email) => {
     localStorage.setItem("npu_ds_email",email);
 }
 
-const getToken = () => {
+export const getDsToken = () => {
     return localStorage.getItem("npu_ds_token");
 }
 
-const setToken = (token) => {
+export const setDsToken = (token) => {
     localStorage.setItem("npu_ds_token",token);
 }
 
-const getRoles = () => {
+export const getDsRoles = () => {
     return JSON.parse(localStorage.getItem("npu_ds_role"));
 }
 
-const hasRole = (role) => {
+export const hasDsRole = (role) => {
     JSON.parse(localStorage.getItem("npu_ds_role"))
         .map((option) => {
             if (option === role) {
@@ -34,10 +28,10 @@ const hasRole = (role) => {
     return false;
 }
 
-const setRoles = (roles) => {
+export const setDsRoles = (roles) => {
     localStorage.setItem("npu_ds_role",JSON.stringify(roles));
 }
 
-const hasLogin = () => {
+export const hasDsLogin = () => {
 
 }
