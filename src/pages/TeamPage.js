@@ -24,7 +24,6 @@ const items = [
     getItem('所有团队', '1', <BlockOutlined />, [
         getItem('活动时间线', '/team/timeline'),
         getItem('团队列表', '/team/teams'),
-        getItem('创建团队', '/team/new'),
         //getItem('团队提交物排名', '/team/rank'),
     ]),
     getItem('我的团队', '2', <TeamOutlined />, [

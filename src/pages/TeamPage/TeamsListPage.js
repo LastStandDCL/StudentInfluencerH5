@@ -219,16 +219,8 @@ const TeamsListPage = () => {
 
     const date = new Date;
 
-
-    const [tableParams, setTableParams] = useState({
-        pagination: {
-            current: 1,
-            pageSize: 10,
-        },
-    });
-
     const onSearch = (value) => {
-        console.log(value)
+        console.log(value);
     };
 
     return (
@@ -266,8 +258,9 @@ const TeamsListPage = () => {
                     <Table
                         columns={columns}
                         dataSource={data}
-                        pagination={tableParams.pagination}
-                        scroll={{ x: "90vh", y: window.innerHeight * 0.5}}
+                        scroll={{
+                            y: window.innerHeight * 0.6,
+                        }}
                     />
                 </Col>
             </Row>

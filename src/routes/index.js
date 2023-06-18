@@ -1,7 +1,7 @@
 import NewsPage from "../pages/HomePage/NewsPage";
 import TeamHomePage from "../pages/TeamPage/TeamHomePage";
 import TeamsListPage from "../pages/TeamPage/TeamsListPage";
-import ProfiilePage from "../pages/TeamPage/ProfiilePage";
+import ProfilePage from "../pages/TeamPage/ProfiiePage";
 import ImagePage from "../pages/HomePage/ImagePage";
 import MaterialPage from "../pages/TeamPage/MaterialPage";
 import CertificatePage from "../pages/TeamPage/CertificatePage";
@@ -27,7 +27,6 @@ import AdminPage from "../pages/AdminPage";
 import TeamPage from "../pages/TeamPage";
 import UploadPassagePage from "../pages/TeamPage/UploadPassagePage";
 import TeamImagesPage from "../pages/TeamPage/TeamImagesPage";
-import CreateTeam from "../pages/TeamPage/CreateTeam";
 import TimeLinePage from "../pages/TeamPage/TimeLinePage";
 
 const routes = [
@@ -108,13 +107,6 @@ const routes = [
                 }
             },
             {
-                path:"new",
-                element: <CreateTeam/>,
-                meta: {
-                    auth: true,
-                }
-            },
-            {
                 path:"timeline",
                 element: <TimeLinePage/>,
                 meta: {
@@ -130,7 +122,7 @@ const routes = [
             },
             {
                 path:"my-profile",
-                element: <ProfiilePage/>,
+                element: <ProfilePage/>,
                 meta: {
                     auth: true,
                 }

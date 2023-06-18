@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CreateTeam = () => {
+const ProfiiePage = () => {
     return (
         <div>
-            
+
         </div>
     );
 };
 
-export default CreateTeam;
+export default ProfiiePage;

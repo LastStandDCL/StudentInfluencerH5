@@ -70,13 +70,16 @@ const TimeLinePage = () => {
                     <Cascader options={options} onChange={onChange} placeholder="活动年份" defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}/>
                 </Col>
             </Row>
-            <p style={{
+            <p
+                style={{
                 color: Globals.npu_color,
                 fontSize: '3vh',
                 textAlign: 'center',
                 fontFamily: 'font1',
-                fontWeight: 'bold',
-            }}>活动时间线</p>
+                fontWeight: 'bold',}}
+            >
+                活动时间线
+            </p>
             <Steps current={current} items={items} />
             <Row gutter={16} style={{textAlign:'center',marginTop:'4vh'}}>
                 <Col span={12}>
