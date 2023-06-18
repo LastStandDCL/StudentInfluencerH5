@@ -11,7 +11,8 @@ const ImageBlock = (props) => {
             <Card
                 hoverable
                 style={{
-                    margin: '3%',
+                    margin: '2%',
+                    height: '30vh',
                 }}
                 cover={
                     <Image
@@ -35,13 +36,13 @@ const ImageBlock = (props) => {
                                         {date}
                                     </p>
                                 </Col>
-                                <Col span={7} style={{margin: '3%'}}>
-                                    <Button danger>
+                                <Col span={9}>
+                                    <Button danger size='small'>
                                         删除照片
                                     </Button>
                                 </Col>
-                                <Col span={7} style={{margin: '3%'}}>
-                                    <Button>
+                                <Col span={8}>
+                                    <Button size='small'>
                                         申请优选
                                     </Button>
                                 </Col>

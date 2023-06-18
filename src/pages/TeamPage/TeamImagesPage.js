@@ -2,7 +2,8 @@ import React from 'react';
 import Globals from "../../Globals";
 import {Button, Col, Pagination, Row} from "antd";
 import ImageBlock from "../../components/TeamPage/ImageBlock";
-import {FileAddOutlined} from "@ant-design/icons";
+import {FileAddOutlined, ReloadOutlined} from "@ant-design/icons";
+import {useNavigate} from "react-router-dom";
 
 const item = [
     {
@@ -35,6 +36,7 @@ const item = [
 
 const TeamImagesPage = () => {
 
+
     const onChange = (pageNumber) => {
         console.log('Page: ', pageNumber);
     };
@@ -66,12 +68,12 @@ const TeamImagesPage = () => {
                         style={{
                             marginLeft: '3%',
                             marginTop: '3%',
-                            height: '215%',
+                            height: '29vh',
                             width: '95%',
                             color: Globals.npu_color,
                         }}
                     >
-                        <FileAddOutlined />
+                        <FileAddOutlined/>
                         <br/>
                         上传新照片
                     </Button>

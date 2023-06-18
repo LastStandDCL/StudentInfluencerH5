@@ -240,7 +240,7 @@ const TeamsListPage = () => {
                 <Col span={2}>
                     <p>活动年份：</p>
                 </Col>
-                <Col span={6} style={{marginTop:'1vh'}}>
+                <Col span={7} style={{marginTop:'1vh'}}>
                     <Cascader
                         style={{width: "20ex"}}
                         options={options}
@@ -249,13 +249,18 @@ const TeamsListPage = () => {
                         defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}
                     />
                 </Col>
-                <Col span={10}/>
+                <Col span={7}/>
                 <Col span={5} style={{marginTop:'1vh'}}>
                     <Search
                         placeholder="输入高中名称进行搜索"
                         allowClear
                         onSearch={onSearch}
                     />
+                </Col>
+                <Col span={2} style={{marginTop:'1vh',marginLeft:'2%'}}>
+                    <Button type='primary'>
+                        创建队伍
+                    </Button>
                 </Col>
                 <Col span={1}/>
                 <Col span={24}>

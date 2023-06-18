@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button, Space, Table, Tag} from "antd";
+import {Button, Row, Space, Table, Tag} from "antd";
 import Globals from "../../Globals";
+import {CloudDownloadOutlined, CloudUploadOutlined} from "@ant-design/icons";
 
 const data = [
     {
@@ -79,16 +80,17 @@ const columns = [
         ),
     },
     {
-        title: 'Action',
+        title: '操作',
         key: 'action',
         render: (_, {state}) => (
-            <Space size="middle">
-                <Button>预览文件</Button>
-                <Button>查看审核意见</Button>
-                <Button disabled={state === 'pending'}>
-                    {state === 'fail'? '重新':''}
-                    提交
-                </Button>
+            <Space size="middle" direction='vertical'>
+                <Row>
+                    <Button size='small' style={{marginRight: '12px'}}>预览文件</Button>
+                    <Button size='small' disabled={state === 'success'}>
+                        重新提交
+                    </Button>
+                </Row>
+                <Button size='small' >查看审核意见</Button>
             </Space>
         ),
     },
@@ -108,11 +110,24 @@ const UploadPassagePage = () => {
             >
                 活动新闻稿
             </p>
-            <Button type='primary'>上传新闻稿</Button>
+            <Button
+                type='primary'
+                style={{float: 'right', marginRight: '5%'}}
+                icon={<CloudUploadOutlined />}
+            >
+                上传新闻稿
+            </Button>
+            <Button
+                type='default'
+                style={{float: 'right',  marginRight: '1%'}}
+                icon={<CloudDownloadOutlined />}
+            >
+                下载新闻稿模板
+            </Button>
             <Table
                 columns={columns}
                 dataSource={data}
-                scroll={{ x: window.innerHeight * 0.5 }}
+                scroll={{ y: window.innerHeight * 0.55}}
                 style={{margin: '3%'}}
             />
         </div>
