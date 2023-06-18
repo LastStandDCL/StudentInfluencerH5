@@ -2,8 +2,8 @@ import {BlockOutlined, TeamOutlined, UserOutlined} from '@ant-design/icons';
 import {Layout, Menu, theme} from 'antd';
 import React from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
-import FooterBar from "../FooterBar";
-import AccountHeaderBar from "../AccountHeaderBar";
+import FooterBar from "../components/FooterBar";
+import AccountHeaderBar from "../components/AccountHeaderBar";
 
 const {
     Content,
@@ -55,16 +55,16 @@ const TeamPage = () => {
 
     return (
         <div>
-           <div
-               style={{
-                   position: "fixed",
-                   width: '100vw',
-                   height: '7.5vh',
-                   zIndex: 100,
-               }}
-           >
-               <AccountHeaderBar/>
-           </div>
+            <div
+                style={{
+                    position: "fixed",
+                    width: '100vw',
+                    height: '7.5vh',
+                    zIndex: 100,
+                }}
+            >
+                <AccountHeaderBar/>
+            </div>
             <div style={{height: '7.5vh'}}/>
             <Layout style={{height: "100vh", marginTop:'2px'}}>
                 <Layout>

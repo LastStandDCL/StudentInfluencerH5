@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Col} from "antd";
 import {
     FileExcelOutlined,
@@ -7,13 +7,39 @@ import {
     FileOutlined,
     FilePdfOutlined,
     FilePptOutlined,
-    FileWordOutlined, FileZipOutlined,
+    FileWordOutlined,
+    FileZipOutlined,
     VideoCameraOutlined
 } from "@ant-design/icons";
 import {getFileType} from "../../utils/FileTypeChecker";
 
 const MaterialBlock = (props) => {
-    const {description} = props;
+
+    const {description, state} = props;
+    const [color, setColor] = useState('#000000');
+    const [note, setNote] = useState('');
+    const [disable, setDisable] = useState(false);
+
+    useEffect(()=>{
+        switch (state) {
+            case 'success':
+                setColor('#00a120');
+                setNote('材料审批通过');
+                break;
+            case 'pending':
+                setColor('#dc9c24');
+                setNote('材料审批中');
+                setDisable(true);
+                break;
+            case 'fail':
+                setColor('#be1400');
+                setNote('材料审批失败');
+                setDisable(true);
+                break;
+            default:
+                setColor('#000000');
+        }
+    },[])
 
     const getIcon = () => {
         const type = getFileType(description);
@@ -60,11 +86,15 @@ const MaterialBlock = (props) => {
                 style={{
                     height: '90%',
                     width: '90%',
+                    color: color,
                 }}
+                disabled={disable}
             >
                 {getIcon()}
                 <br/>
                 {description}
+                <br/>
+                {note}
             </Button>
         </Col>
     );

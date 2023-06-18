@@ -39,10 +39,20 @@ const item1 = [
 
 const item2 = [
     {
-        fileName:'1.mp4',
+        fileName:'2.doc',
+        state:'success',
     },
     {
-        fileName:'2.doc',
+        fileName:'3.txt',
+        state:'success',
+    },
+    {
+        fileName:'4.xlsx',
+        state:'pending',
+    },
+    {
+        fileName:'5.md',
+        state:'fail',
     },
 ]
 
@@ -53,15 +63,24 @@ const MaterialPage = () => {
             <Row style={{margin: '4%'}}>
                 {item1.map((option)=>{
                     return (
-                        <MaterialBlock description={option.fileName}/>
+                        <MaterialBlock
+                            description={option.fileName}
+                        />
                     );
                 })}
             </Row>
-            <p style={styles.title}>团队特色材料</p>
+            <Row>
+                <p style={styles.title}>团队特色材料</p>
+                <p style={styles.subTitle}>最多5项</p>
+                <Button style={styles.button}>查看审批记录</Button>
+            </Row>
             <Row style={{margin: '4%'}}>
                 {item2.map((option)=>{
                     return (
-                        <MaterialBlock description={option.fileName}/>
+                        <MaterialBlock
+                            description={option.fileName}
+                            state={option.state}
+                        />
                     );
                 })}
                 <Col
@@ -96,6 +115,16 @@ const styles = {
         fontSize: '3vh',
         fontFamily: 'font1',
         fontWeight: 'bold',
+        margin: '2%',
+    },
+    subTitle:{
+        color: Globals.npu_color,
+        fontSize: '2vh',
+        fontFamily: 'font1',
+        fontWeight: 'bold',
+        marginTop: '2.5%',
+    },
+    button:{
         margin: '2%',
     }
 }

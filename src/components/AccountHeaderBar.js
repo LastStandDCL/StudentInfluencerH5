@@ -2,9 +2,19 @@ import React from 'react';
 import {Avatar, Col, Dropdown, Row, Space, Button} from 'antd';
 import Globals from "../Globals";
 import {useNavigate} from "react-router-dom";
-import {DownOutlined, LockOutlined, RollbackOutlined, UserOutlined} from "@ant-design/icons";
+import {DownOutlined, KeyOutlined, RollbackOutlined, TeamOutlined} from "@ant-design/icons";
 
 const items = [
+    {
+        label: '进入管理员界面',
+        key: '/admin/info',
+        icon: <KeyOutlined />,
+    },
+    {
+        label: '返回团队界面',
+        key: '/team/teams',
+        icon: <TeamOutlined />,
+    },
     {
         label: '退出登录',
         key: '/home/news',

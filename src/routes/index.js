@@ -24,10 +24,11 @@ import {Navigate} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AuthPage from "../pages/AuthPage";
 import AdminPage from "../pages/AdminPage";
-import TeamPage from "../components/HomePage/TeamPage";
+import TeamPage from "../pages/TeamPage";
 import UploadPassagePage from "../pages/TeamPage/UploadPassagePage";
 import TeamImagesPage from "../pages/TeamPage/TeamImagesPage";
 import TimeLinePage from "../pages/TeamPage/TimeLinePage";
+import ActivityManage from "../pages/AdminPage/ActivityManage";
 
 const routes = [
     {
@@ -237,7 +238,14 @@ const routes = [
                 meta: {
                     auth: true,
                 }
-            }
+            },
+            {
+                path:"activity-manage",
+                element: <ActivityManage/>,
+                meta: {
+                    auth: true,
+                }
+            },
         ]
     },
 ]
