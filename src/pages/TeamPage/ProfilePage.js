@@ -1,7 +1,7 @@
 import React from 'react';
 import Globals from "../../Globals";
 
-const UploadPassagePage = () => {
+const ProfilePage = () => {
     return (
         <div>
             <p
@@ -13,10 +13,10 @@ const UploadPassagePage = () => {
                     fontWeight: 'bold',
                 }}
             >
-                活动通讯稿上传
+                我的个人信息
             </p>
         </div>
     );
 };
 
-export default UploadPassagePage;
+export default ProfilePage;

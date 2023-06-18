@@ -2,8 +2,8 @@ import {BlockOutlined, TeamOutlined, UserOutlined} from '@ant-design/icons';
 import {Layout, Menu, theme} from 'antd';
 import React from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
-import FooterBar from "../components/FooterBar";
-import AccountHeaderBar from "../components/AccountHeaderBar";
+import FooterBar from "../FooterBar";
+import AccountHeaderBar from "../AccountHeaderBar";
 
 const {
     Content,
@@ -104,7 +104,7 @@ const TeamPage = () => {
                                 marginRight: '5%',
                                 marginTop: '1%',
                                 background: colorBgContainer,
-                                zIndex: 0
+                                zIndex: 0,
                             }}
                         >
                             <Outlet/>

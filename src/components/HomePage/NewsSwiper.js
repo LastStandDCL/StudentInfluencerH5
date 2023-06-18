@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {Button, Carousel} from "antd";
-import backgroundVideo from "../../../assets/news1.mp4";
+import backgroundVideo from "../../assets/news1.mp4";
 import {LeftOutlined, RightOutlined} from "@ant-design/icons";
 
 const NewsSwiper = () => {

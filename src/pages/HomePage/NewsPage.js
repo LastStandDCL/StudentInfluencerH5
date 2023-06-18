@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import NewsSwiper from "../../components/HomePage/NewsPage/NewsSwiper";
+import NewsSwiper from "../../components/HomePage/NewsSwiper";
 import HomeHeaderBar from "../../components/HomePage/HomeHeaderBar";
-import NewsCard from "../../components/HomePage/NewsPage/NewsCard";
-import NewsList from "../../components/HomePage/NewsPage/NewsList";
+import NewsCard from "../../components/HomePage/NewsCard";
+import NewsList from "../../components/HomePage/NewsList";
 import {FloatButton} from "antd";
 
 const NewsPage = () => {

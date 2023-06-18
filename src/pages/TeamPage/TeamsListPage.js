@@ -225,13 +225,17 @@ const TeamsListPage = () => {
 
     return (
         <div style={{margin: '2%', zIndex:20}}>
-            <p style={{
-                color: Globals.npu_color,
-                fontSize: '3vh',
-                textAlign: 'center',
-                fontFamily: 'font1',
-                fontWeight: 'bold',
-            }}>队伍列表</p>
+            <p
+                style={{
+                    color: Globals.npu_color,
+                    fontSize: '3vh',
+                    textAlign: 'center',
+                    fontFamily: 'font1',
+                    fontWeight: 'bold',
+                }}
+            >
+                队伍列表
+            </p>
             <Row>
                 <Col span={2}>
                     <p>活动年份：</p>
@@ -259,7 +263,7 @@ const TeamsListPage = () => {
                         columns={columns}
                         dataSource={data}
                         scroll={{
-                            y: window.innerHeight * 0.6,
+                            y: window.innerHeight * 0.55,
                         }}
                     />
                 </Col>

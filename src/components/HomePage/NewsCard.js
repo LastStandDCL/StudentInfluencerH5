@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Col, Row} from "antd";
 import Meta from "antd/es/card/Meta";
-import Globals from "../../../Globals";
+import Globals from "../../Globals";
 
 const NewsCard = () => {
     return (

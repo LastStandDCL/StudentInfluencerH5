@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, Col, Pagination, Row} from "antd";
-import Globals from "../../../Globals";
+import Globals from "../../Globals";
 import Meta from "antd/es/card/Meta";
 
 const NewsList = () => {

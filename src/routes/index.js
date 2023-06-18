@@ -1,7 +1,7 @@
 import NewsPage from "../pages/HomePage/NewsPage";
 import TeamHomePage from "../pages/TeamPage/TeamHomePage";
 import TeamsListPage from "../pages/TeamPage/TeamsListPage";
-import ProfilePage from "../pages/TeamPage/ProfiiePage";
+import ProfilePage from "../pages/TeamPage/ProfilePage";
 import ImagePage from "../pages/HomePage/ImagePage";
 import MaterialPage from "../pages/TeamPage/MaterialPage";
 import CertificatePage from "../pages/TeamPage/CertificatePage";
@@ -24,7 +24,7 @@ import {Navigate} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AuthPage from "../pages/AuthPage";
 import AdminPage from "../pages/AdminPage";
-import TeamPage from "../pages/TeamPage";
+import TeamPage from "../components/HomePage/TeamPage";
 import UploadPassagePage from "../pages/TeamPage/UploadPassagePage";
 import TeamImagesPage from "../pages/TeamPage/TeamImagesPage";
 import TimeLinePage from "../pages/TeamPage/TimeLinePage";
