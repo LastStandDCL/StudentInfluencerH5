@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
-import {Layout, Menu, theme} from "antd";
+import {Badge, Layout, Menu, theme} from "antd";
 import AccountHeaderBar from "../components/AccountHeaderBar";
 import FooterBar from "../components/FooterBar";
 import {BlockOutlined, TeamOutlined, UserOutlined} from "@ant-design/icons";
@@ -21,28 +21,48 @@ function getItem(label, key, icon, children, type) {
     };
 }
 
-const items = [
-    getItem('活动管理', '1', <BlockOutlined />, [
-        getItem('活动进程', '/admin/activity-manage'),
-        getItem('活动概览', '/admin/info'),
-        getItem('团队管理', '/admin/teams-manage'),
-    ]),
-    getItem('材料审批', '2', <TeamOutlined />, [
-        getItem('审核宣讲材料', '/admin/check-material'),
-        getItem('审核团队中期报告', '/admin/check-mid'),
-        getItem('审核个人结题报告', '/admin/check-person'),
-        getItem('审核团队结题报告', '/admin/check-final'),
-        getItem('审核新闻投稿', '/admin/check-passage'),
-    ]),
-    getItem('人事管理', '3', <UserOutlined />, [
-        getItem('管理员任命', '/admin/admin-settings'),
-
-    ]),
-];
-
 const AdminPage = () => {
 
     const navigate = useNavigate();
+
+    const items = [
+        getItem('活动管理', '1', <BlockOutlined />, [
+            getItem('活动进程', '/admin/activity-manage'),
+            getItem('活动概览', '/admin/info'),
+            getItem('团队管理', '/admin/teams-manage'),
+        ]),
+        getItem('材料审批', '2', <TeamOutlined />, [
+            getItem(
+                <Badge count={3} offset={[20, 20]}>
+                    <p>审核宣讲材料</p>
+                </Badge>
+                , '/admin/check-material'),
+            getItem(
+                <Badge count={3} offset={[20, 20]}>
+                    <p>审核团队中期报告</p>
+                </Badge>
+                , '/admin/check-mid'),
+            getItem(
+                <Badge count={3} offset={[20, 20]}>
+                    <p>审核个人结题报告</p>
+                </Badge>
+                , '/admin/check-person'),
+            getItem(
+                <Badge count={3} offset={[20, 20]}>
+                    <p>审核团队总结报告</p>
+                </Badge>
+                , '/admin/check-final'),
+            getItem(
+                <Badge count={3} offset={[20, 20]}>
+                    <p>审核新闻投稿</p>
+                </Badge>
+                , '/admin/check-passage'),
+        ]),
+        getItem('人事管理', '3', <UserOutlined />, [
+            getItem('管理员任命', '/admin/admin-settings'),
+
+        ]),
+    ];
 
     const onClick = (e) => {
         navigate(e.key);
@@ -86,6 +106,7 @@ const AdminPage = () => {
                             mode="inline"
                             items={items}
                         />
+
                     </Sider>
                     <div
                         style={{

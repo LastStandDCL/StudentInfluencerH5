@@ -1,5 +1,5 @@
 import {BlockOutlined, TeamOutlined, UserOutlined} from '@ant-design/icons';
-import {Layout, Menu, theme} from 'antd';
+import {Badge, Layout, Menu, theme} from 'antd';
 import React from 'react';
 import {Outlet, useNavigate} from "react-router-dom";
 import FooterBar from "../components/FooterBar";
@@ -28,12 +28,32 @@ const items = [
     ]),
     getItem('我的团队', '2', <TeamOutlined />, [
         getItem('团队主页', '/team/my-team'),
-        getItem('活动材料申领', '/team/material'),
-        getItem('活动照片记录','/team/team-images'),
-        getItem('活动通讯稿上传', '/team/passage'),
-        getItem('个人总结报告提交', '/team/upload-my-report'),
+        getItem(
+            <Badge count={1} offset={[20, 20]}>
+                <p>活动材料申领</p>
+            </Badge>
+            , '/team/material'),
+        getItem(
+            <Badge count={0} offset={[20, 20]}>
+                <p>活动照片记录</p>
+            </Badge>
+            ,'/team/team-images'),
+        getItem(
+            <Badge count={0} offset={[20, 20]}>
+                <p>活动新闻稿提交</p>
+            </Badge>
+            , '/team/passage'),
         getItem('团队中期报告提交', '/team/upload-mid-report'),
-        getItem('团队总结报告提交', '/team/upload-final-report'),
+        getItem(
+            <Badge count={1} offset={[20, 20]}>
+                <p>个人总结报告提交</p>
+            </Badge>
+            , '/team/upload-my-report'),
+        getItem(
+            <Badge count={1} offset={[20, 20]}>
+                <p>团队总结报告提交</p>
+            </Badge>
+            , '/team/upload-final-report'),
     ]),
     getItem('我的事务', '3', <UserOutlined />, [
         getItem('活动证书下载', '/team/certificate'),

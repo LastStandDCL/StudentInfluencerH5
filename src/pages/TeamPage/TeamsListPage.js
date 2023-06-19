@@ -212,7 +212,7 @@ const options = [
     },
 ];
 
-const onProvinceChange = (value) => {
+const onYearChange = (value) => {
     console.log(value);
 };
 
@@ -235,7 +235,7 @@ const TeamsListPage = () => {
                     <Cascader
                         style={{width: "20ex"}}
                         options={options}
-                        onChange={onProvinceChange}
+                        onChange={onYearChange}
                         placeholder="活动年份"
                         defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}
                     />
