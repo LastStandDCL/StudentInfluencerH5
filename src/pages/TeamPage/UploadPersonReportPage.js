@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Row, Space, Table, Tag} from "antd";
 import Globals from "../../Globals";
 import {CloudDownloadOutlined, CloudUploadOutlined} from "@ant-design/icons";
+import PageTitle from "../../components/PageTitle";
 
 const data = [
     {
@@ -139,17 +140,7 @@ const columns = [
 const UploadPersonPage = () => {
     return (
         <div>
-            <p
-                style={{
-                    color: Globals.npu_color,
-                    fontSize: '3vh',
-                    textAlign: 'center',
-                    fontFamily: 'font1',
-                    fontWeight: 'bold',
-                }}
-            >
-                个人总结报告提交
-            </p>
+            <PageTitle text='个人总结报告提交'/>
             <Button
                 type='primary'
                 style={{float: 'right', marginRight: '5%'}}

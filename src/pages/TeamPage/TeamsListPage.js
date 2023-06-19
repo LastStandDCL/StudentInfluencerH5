@@ -3,6 +3,7 @@ import {Avatar, Button, Cascader, Col, Row, Select, Space, Table, Tag, Tooltip} 
 import Globals from "../../Globals";
 import Search from "antd/es/input/Search";
 import {UserAddOutlined} from "@ant-design/icons";
+import PageTitle from "../../components/PageTitle";
 
 const columns = [
     {
@@ -225,17 +226,7 @@ const TeamsListPage = () => {
 
     return (
         <div style={{margin: '2%', zIndex:20}}>
-            <p
-                style={{
-                    color: Globals.npu_color,
-                    fontSize: '3vh',
-                    textAlign: 'center',
-                    fontFamily: 'font1',
-                    fontWeight: 'bold',
-                }}
-            >
-                队伍列表
-            </p>
+            <PageTitle text='队伍列表'/>
             <Row>
                 <Col span={2}>
                     <p>活动年份：</p>

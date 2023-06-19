@@ -9,6 +9,7 @@ import {
     SendOutlined
 } from "@ant-design/icons";
 import {useNavigate} from "react-router-dom";
+import PageTitle from "../../components/PageTitle";
 
 const UploadFinalReportPage = () => {
 
@@ -20,17 +21,7 @@ const UploadFinalReportPage = () => {
 
     return (
         <div>
-            <p
-                style={{
-                    color: Globals.npu_color,
-                    fontSize: '3vh',
-                    textAlign: 'center',
-                    fontFamily: 'font1',
-                    fontWeight: 'bold',
-                }}
-            >
-                团队结题报告提交
-            </p>
+            <PageTitle text='团队结题报告提交'/>
             <Row>
                 <Col span={1}/>
                 <Col span={16}

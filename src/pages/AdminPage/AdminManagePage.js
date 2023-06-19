@@ -1,12 +1,12 @@
 import React from 'react';
 import PageTitle from "../../components/PageTitle";
 
-const CheckMidReportPage = () => {
+const AdminManagePage = () => {
     return (
         <div>
-            <PageTitle text='团队中期报告审核'/>
+            <PageTitle text='管理员设置'/>
         </div>
     );
 };
 
-export default CheckMidReportPage;
+export default AdminManagePage;

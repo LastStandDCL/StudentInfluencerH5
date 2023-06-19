@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminSettingsPage = () => {
+const SiteSettingsPage = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const AdminSettingsPage = () => {
     );
 };
 
-export default AdminSettingsPage;
+export default SiteSettingsPage;

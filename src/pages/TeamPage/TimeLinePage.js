@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Button, Steps, theme, message, Row, Col, Statistic, Cascader} from "antd";
 import Globals from "../../Globals";
 import {CalendarOutlined} from "@ant-design/icons";
+import PageTitle from "../../components/PageTitle";
 
 const steps = [
     {
@@ -70,16 +71,7 @@ const TimeLinePage = () => {
                     <Cascader options={options} onChange={onChange} placeholder="活动年份" defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}/>
                 </Col>
             </Row>
-            <p
-                style={{
-                color: Globals.npu_color,
-                fontSize: '3vh',
-                textAlign: 'center',
-                fontFamily: 'font1',
-                fontWeight: 'bold',}}
-            >
-                活动时间线
-            </p>
+            <PageTitle text='活动时间线'/>
             <Steps current={current} items={items} />
             <Row gutter={16} style={{textAlign:'center',marginTop:'4vh'}}>
                 <Col span={12}>

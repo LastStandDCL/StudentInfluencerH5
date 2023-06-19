@@ -4,6 +4,7 @@ import {Button, Col, Pagination, Row} from "antd";
 import ImageBlock from "../../components/TeamPage/ImageBlock";
 import {FileAddOutlined, ReloadOutlined} from "@ant-design/icons";
 import {useNavigate} from "react-router-dom";
+import PageTitle from "../../components/PageTitle";
 
 const item = [
     {
@@ -43,17 +44,7 @@ const TeamImagesPage = () => {
 
     return (
         <div>
-            <p
-                style={{
-                    color: Globals.npu_color,
-                    fontSize: '3vh',
-                    textAlign: 'center',
-                    fontFamily: 'font1',
-                    fontWeight: 'bold',
-                }}
-            >
-                活动照片记录
-            </p>
+            <PageTitle text='活动照片记录'/>
             <Row>
                 <Col
                     span={6}

@@ -2,12 +2,12 @@ import React from 'react';
 import Globals from "../../Globals";
 import PageTitle from "../../components/PageTitle";
 
-const TeamHomePage = () => {
+const ActivityManagePage = () => {
     return (
         <div>
-            <PageTitle text='团队主页'/>
+            <PageTitle text='活动进程管理'/>
         </div>
     );
 };
 
-export default TeamHomePage;
+export default ActivityManagePage;

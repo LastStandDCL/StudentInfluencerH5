@@ -14,7 +14,7 @@ import CheckPersonPage from "../pages/AdminPage/CheckPersonPage";
 import CheckMaterialPage from "../pages/AdminPage/CheckMaterialPage";
 import CheckPassagePage from "../pages/AdminPage/CheckPassagePage";
 import InfoPage from "../pages/AdminPage/InfoPage";
-import AdminSettingsPage from "../pages/AdminPage/AdminSettingsPage";
+import AdminManagePage from "../pages/AdminPage/AdminManagePage";
 import TeamsManagePage from "../pages/AdminPage/TeamsManagePage";
 import LoginPage from "../pages/AuthPage/LoginPage";
 import RegisterPage from "../pages/AuthPage/RegisterPage";
@@ -28,7 +28,8 @@ import TeamPage from "../pages/TeamPage";
 import UploadPassagePage from "../pages/TeamPage/UploadPassagePage";
 import TeamImagesPage from "../pages/TeamPage/TeamImagesPage";
 import TimeLinePage from "../pages/TeamPage/TimeLinePage";
-import ActivityManage from "../pages/AdminPage/ActivityManage";
+import ActivityManagePage from "../pages/AdminPage/ActivityManagePage";
+import SiteSettingsPage from "../pages/AdminPage/SiteSettingsPage";
 
 const routes = [
     {
@@ -227,7 +228,14 @@ const routes = [
             },
             {
                 path:"admin-settings",
-                element: <AdminSettingsPage/>,
+                element: <AdminManagePage/>,
+                meta: {
+                    auth: true,
+                }
+            },
+            {
+                path:"site-settings",
+                element: <SiteSettingsPage/>,
                 meta: {
                     auth: true,
                 }
@@ -241,7 +249,7 @@ const routes = [
             },
             {
                 path:"activity-manage",
-                element: <ActivityManage/>,
+                element: <ActivityManagePage/>,
                 meta: {
                     auth: true,
                 }
