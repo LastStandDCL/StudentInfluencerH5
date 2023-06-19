@@ -43,7 +43,11 @@ const items = [
                 <p>活动新闻稿提交</p>
             </Badge>
             , '/team/passage'),
-        getItem('团队中期报告提交', '/team/upload-mid-report'),
+        getItem(
+            <Badge count={0} offset={[20, 20]}>
+                <p>团队中期报告提交</p>
+            </Badge>
+            , '/team/upload-mid-report'),
         getItem(
             <Badge count={1} offset={[20, 20]}>
                 <p>个人总结报告提交</p>
