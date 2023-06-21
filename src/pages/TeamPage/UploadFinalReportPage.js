@@ -1,5 +1,4 @@
 import React from 'react';
-import Globals from "../../Globals";
 import {Button, Col, Row, Space, Spin, Steps} from "antd";
 import {
     CloudDownloadOutlined,

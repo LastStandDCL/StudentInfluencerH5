@@ -7,6 +7,16 @@ import PageTitle from "../../components/PageTitle";
 
 const columns = [
     {
+        title: '活动年份',
+        dataIndex: 'year',
+        key: 'year',
+    },
+    {
+        title: '所属省份',
+        dataIndex: 'province',
+        key: 'province',
+    },
+    {
         title: '队伍名称',
         dataIndex: 'teamName',
         key: 'teamName',
@@ -52,26 +62,6 @@ const columns = [
         ),
     },
     {
-        title: '标签',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
         title: '操作',
         key: 'action',
         render: (_, record) => (
@@ -94,6 +84,8 @@ const data = [
     {
         teamName: '附中隔壁队',
         highSchool: '高新一中',
+        province: '陕西省',
+        year: '2024',
         members: [
             {
                 name: '邓博文',
@@ -126,78 +118,6 @@ const data = [
                 tooltip: '软件学院 2020级',
             },
         ],
-        address: 'New York No. 1 Lake Park',
-        tags: ['2023', '陕西省'],
-    },
-    {
-        teamName: '啊对对队9',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队8',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队7',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队6',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队5',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队4',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队3',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队2',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '啊对对队1',
-        highSchool: '郑州市外国语中学',
-        members: ['2023', '河南省'],
-        address: 'London No. 1 Lake Park',
-        tags: ['2023', '河南省'],
-    },
-    {
-        teamName: '附属大学返乡队',
-        highSchool: '西北工业大学附属中学',
-        members: ['2023', '河南省'],
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['2023', '陕西省'],
     },
 ];
 

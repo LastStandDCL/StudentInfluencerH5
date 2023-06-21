@@ -14,6 +14,14 @@ export const setDsToken = (token) => {
     localStorage.setItem("npu_ds_token",token);
 }
 
+export const getDsAvatar = () => {
+    return localStorage.getItem("npu_ds_avatar");
+}
+
+export const setDsAvatar = (token) => {
+    localStorage.setItem("npu_ds_avatar",token);
+}
+
 export const getDsRoles = () => {
     return JSON.parse(localStorage.getItem("npu_ds_role"));
 }
