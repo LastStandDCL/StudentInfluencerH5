@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Avatar, Button, Cascader, Col, Row, Select, Space, Table, Tag, Tooltip} from "antd";
+import React from 'react';
+import {Avatar, Button, Select, Col, Row, Space, Table, Tooltip} from "antd";
 import Globals from "../../Globals";
 import Search from "antd/es/input/Search";
 import {UserAddOutlined} from "@ant-design/icons";
@@ -152,7 +152,7 @@ const TeamsListPage = () => {
                     <p>活动年份：</p>
                 </Col>
                 <Col span={7} style={{marginTop:'1vh'}}>
-                    <Cascader
+                    <Select
                         style={{width: "20ex"}}
                         options={options}
                         onChange={onYearChange}

@@ -1,13 +1,45 @@
-import { Button, Form, Input, Row, Col } from 'antd';
+import {Button, Form, Input, Row, Col, message} from 'antd';
 import {useState} from 'react';
+import {postWithoutToken} from "../../utils/Rq";
 const ResetPassword = () => {
 
     const [password, setPassword] = useState('');
 
     const [passwordAgain, setPasswordAgain] = useState('');
 
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const onsubmit = () => {
+        if(password === '' || passwordAgain === ''){
+            messageApi.open({
+                type: 'error',
+                content: '密码或确认密码不能为空',
+            });
+            return;
+        }
+        if(password !== passwordAgain){
+            messageApi.open({
+                type: 'error',
+                content: '两次输入的密码不一致',
+            });
+            return;
+        }
+        postWithoutToken("",{
+            password: password,
+        }).then((response) => {
+            if(response.status === 200){
+            }
+        }).catch(e => {
+            messageApi.open({
+                type: 'error',
+                content: '连接服务器失败，Error：502',
+            });
+        })
+    }
+
     return (
         <Row>
+            {contextHolder}
             <Col span={6}/>
             <Col span={9}>
                 <Form
@@ -56,7 +88,11 @@ const ResetPassword = () => {
                         }}
                         style={{textAlign:'center'}}
                     >
-                        <Button type="primary" htmlType="submit">
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            onClick={onsubmit}
+                        >
                             重置密码
                         </Button>
                     </Form.Item>

@@ -1,8 +1,5 @@
 export default [
     {
-        provinceName: '不限制',
-    },
-    {
         provinceName: '北京市',
     },
     {

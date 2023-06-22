@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Steps, theme, message, Row, Col, Statistic, Cascader} from "antd";
-import Globals from "../../Globals";
+import {Steps, theme, Row, Col, Statistic, Select} from "antd";
 import {CalendarOutlined} from "@ant-design/icons";
 import PageTitle from "../../components/PageTitle";
 
@@ -68,7 +67,7 @@ const TimeLinePage = () => {
                     <p>活动年份：</p>
                 </Col>
                 <Col span={6} style={{marginTop:'1vh'}}>
-                    <Cascader options={options} onChange={onChange} placeholder="活动年份" defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}/>
+                    <Select options={options} onChange={onChange} placeholder="活动年份" defaultValue={[date.getFullYear() + "-" + (date.getFullYear() + 1) + '学年']}/>
                 </Col>
             </Row>
             <PageTitle text='活动时间线'/>

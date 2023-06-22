@@ -1,7 +1,8 @@
 import PageTitle from "../../components/PageTitle";
-import EChartMapBars from "../../components/AdminPage/ChinaMap";
-import {Cascader, Col, Row} from "antd";
+import ChinaMap from "../../components/AdminPage/ChinaMap";
+import {Col, Row, Select} from "antd";
 import React from "react";
+import StatisticBoard from "../../components/AdminPage/StatisticBoard";
 
 const options = [
     {
@@ -18,7 +19,7 @@ const InfoPage = () => {
 
     const date = new Date();
     const onYearChange = () => {
-        
+
     }
 
     return (
@@ -29,7 +30,7 @@ const InfoPage = () => {
                     <p>活动年份：</p>
                 </Col>
                 <Col span={4} style={{marginTop:'1vh'}}>
-                    <Cascader
+                    <Select
                         style={{width: "20ex"}}
                         options={options}
                         onChange={onYearChange}
@@ -38,7 +39,7 @@ const InfoPage = () => {
                     />
                 </Col>
                 <Col span={18}/>
-                <Col span={12}>
+                <Col span={11}>
                     <p
                         style={{
                             fontSize:'2.4vh',
@@ -54,11 +55,11 @@ const InfoPage = () => {
                             borderWidth: '1px',
                         }}
                     >
-                        <EChartMapBars/>
+                        <ChinaMap/>
                     </div>
                 </Col>
-                <Col span={12}>
-
+                <Col span={13}>
+                    <StatisticBoard/>
                 </Col>
             </Row>
         </div>

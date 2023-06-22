@@ -4,7 +4,6 @@ import TeamsListPage from "../pages/TeamPage/TeamsListPage";
 import ProfilePage from "../pages/TeamPage/ProfilePage";
 import ImagePage from "../pages/HomePage/ImagePage";
 import MaterialPage from "../pages/TeamPage/MaterialPage";
-import CertificatePage from "../pages/TeamPage/CertificatePage";
 import UploadPersonReportPage from "../pages/TeamPage/UploadPersonReportPage";
 import UploadFinalReportPage from "../pages/TeamPage/UploadFinalReportPage";
 import UploadMidReportPage from "../pages/TeamPage/UploadMidReportPage";
@@ -146,13 +145,6 @@ const routes = [
             {
                 path:"team-images",
                 element: <TeamImagesPage/>,
-                meta: {
-                    auth: true,
-                }
-            },
-            {
-                path:"certificate",
-                element: <CertificatePage/>,
                 meta: {
                     auth: true,
                 }

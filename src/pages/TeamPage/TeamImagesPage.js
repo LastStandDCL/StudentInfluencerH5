@@ -2,8 +2,7 @@ import React from 'react';
 import Globals from "../../Globals";
 import {Button, Col, Pagination, Row} from "antd";
 import ImageBlock from "../../components/TeamPage/ImageBlock";
-import {FileAddOutlined, ReloadOutlined} from "@ant-design/icons";
-import {useNavigate} from "react-router-dom";
+import {FileAddOutlined} from "@ant-design/icons";
 import PageTitle from "../../components/PageTitle";
 
 const item = [

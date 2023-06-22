@@ -60,7 +60,6 @@ const items = [
             , '/team/upload-final-report'),
     ]),
     getItem('我的事务', '3', <UserOutlined />, [
-        getItem('活动证书下载', '/team/certificate'),
         getItem('修改个人信息', '/team/my-profile'),
     ]),
 ];

@@ -39,7 +39,7 @@ const ChinaMap = () => {
         <div>
             <div
                 style={{
-                    width: "100%",
+                    width: "82%",
                     height: "60vh",
                 }}
                  ref={ref}>

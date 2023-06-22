@@ -58,9 +58,9 @@ const AdminPage = () => {
                 </Badge>
                 , '/admin/check-passage'),
         ]),
-        getItem('人事管理', '3', <UserOutlined />, [
-            getItem('管理员任命', '/admin/admin-settings'),
-
+        getItem('系统设置', '3', <UserOutlined />, [
+            getItem('管理员设置', '/admin/admin-settings'),
+            getItem('网站设置', '/admin/site-settings'),
         ]),
     ];
 

@@ -1,6 +1,14 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {Button, Col, ConfigProvider, Form, Input, message, Row} from "antd";
+import {
+    Button,
+    Col,
+    ConfigProvider,
+    Form,
+    Input,
+    message,
+    Row
+} from "antd";
 import {FieldNumberOutlined, LockOutlined, MailOutlined} from "@ant-design/icons";
 import Globals from "../../Globals";
 import {postWithoutToken} from "../../utils/Rq";
@@ -55,6 +63,13 @@ const FoundPasswordPage = () => {
             messageApi.open({
                 type: 'error',
                 content: '注册邮箱或验证码不能为空',
+            });
+            return;
+        }
+        if(password !== passwordAgain){
+            messageApi.open({
+                type: 'error',
+                content: '两次输入的密码不一致',
             });
             return;
         }
@@ -175,6 +190,7 @@ const FoundPasswordPage = () => {
                             type="password"
                             placeholder="请再次输入新密码"
                             size="large"
+                            onChange={(e) => setPasswordAgain(e.target.value)}
                         />
                     </Form.Item>
                     <Form.Item>

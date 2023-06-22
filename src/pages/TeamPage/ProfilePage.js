@@ -1,9 +1,8 @@
 import ProfileEdit from "../../components/TeamPage/ProfileEdit";
 import PageTitle from "../../components/PageTitle";
-import ResetPassword from "./ResetPassword";
+import ResetPassword from "../../components/TeamPage/ResetPassword";
 
 const ProfilePage = () => {
-
 
     return (
         <div>

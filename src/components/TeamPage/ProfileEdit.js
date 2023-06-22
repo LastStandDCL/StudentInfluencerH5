@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Provinces from "../../utils/Provinces";
 import phonePrefix from "../../utils/phonePrefix";
 import {
@@ -36,20 +36,38 @@ const formItemLayout = {
 
 const ProfileEdit = () => {
 
+    useEffect(()=>{
+        let formProvince = [];
+        Provinces.map(option => {
+                formProvince.push({
+                    label: option.provinceName,
+                    value: option.provinceName,
+                    isLeaf: false,
+                })
+            }
+        )
+        setOptions(formProvince);
+    },[])
+
     const [form] = Form.useForm();
 
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
 
-    const [options, setOptions] = useState(
-        Provinces.map(option => {
-                return option.provinceName;
-            }
-        ));
-    const onChange = (value, selectedOptions) => {
+    const [options, setOptions] = useState([]);
+
+    const onProvinceAndHighSchoolChange = (value, selectedOptions) => {
         console.log(value, selectedOptions);
     };
+
+    const onSubmit = () => {
+        let a = Provinces.map(option => {
+                return option.provinceName;
+            }
+        )
+        console.log(a);
+    }
 
     const loadData = (selectedOptions) => {
         const targetOption = selectedOptions[selectedOptions.length - 1];
@@ -58,12 +76,32 @@ const ProfileEdit = () => {
         setTimeout(() => {
             targetOption.children = [
                 {
-                    label: `${targetOption.label} Dynamic 1`,
+                    label: `西安市高新区第一中学`,
                     value: 'dynamic1',
                 },
                 {
-                    label: `${targetOption.label} Dynamic 2`,
+                    label: `西北工业大学附属中学`,
                     value: 'dynamic2',
+                },
+                {
+                    label: `西安市高新区第一中学河滨校区`,
+                    value: 'dynamic3',
+                },
+                {
+                    label: `西北工业大学附属中学晗光中学`,
+                    value: 'dynamic4',
+                },
+                {
+                    label: `西安市铁一中学`,
+                    value: 'dynamic5',
+                },
+                {
+                    label: `西安交通大学附属中学阳光中学`,
+                    value: 'dynamic6',
+                },
+                {
+                    label: `西安交通大学附属中学`,
+                    value: 'dynamic7',
                 },
             ];
             setOptions([...options]);
@@ -74,8 +112,10 @@ const ProfileEdit = () => {
         <Form.Item name="prefix" noStyle>
             <Select
                 style={{
-                    width: 70,
+                    width: 80,
                 }}
+                defaultValue='+86'
+                disabled={true}
             >
                 {
                     phonePrefix.map((option)=>{
@@ -95,17 +135,13 @@ const ProfileEdit = () => {
     return (
         <div>
             <Row style={{marginTop: '2%'}}>
-                <Col span={6}/>
-                <Col span={8}>
+                <Col span={4}/>
+                <Col span={10}>
                     <Form
                         {...formItemLayout}
                         form={form}
                         name="register"
                         onFinish={onFinish}
-                        initialValues={{
-                            residence: ['zhejiang', 'hangzhou', 'xihu'],
-                            prefix: '86',
-                        }}
                         style={{
                             maxWidth: 600,
                         }}
@@ -124,25 +160,16 @@ const ProfileEdit = () => {
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input your nickname!',
+                                    message: '请输入你的真实姓名与性别!',
                                     whitespace: true,
                                 },
                             ]}
                         >
-                            <Input />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="gender"
-                            label="性别"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: '请选择你的性别！',
-                                },
-                            ]}
-                        >
-                            <Select style={{width:'40%'}}>
+                            <Input style={{width:'70%'}}/>
+                            <Select
+                                style={{width:'30%'}}
+                                placeholder='性别'
+                            >
                                 <Option value="male">男</Option>
                                 <Option value="female">女</Option>
                             </Select>
@@ -154,7 +181,7 @@ const ProfileEdit = () => {
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Please input donation amount!',
+                                    message: '请输入你的学号!',
                                 },
                             ]}
                         >
@@ -190,26 +217,6 @@ const ProfileEdit = () => {
                             </Select>
                         </Form.Item>
 
-
-                        <Form.Item
-                            name="residence"
-                            label="省份/高中"
-                            rules={[
-                                {
-                                    type: 'array',
-                                    required: true,
-                                    message: 'Please select your habitual residence!',
-                                },
-                            ]}
-                        >
-                            <Cascader
-                                options={options}
-                                loadData={loadData}
-                                onChange={onChange}
-                                changeOnSelect
-                            />
-                        </Form.Item>
-
                         <Form.Item
                             name="phone"
                             label="电话"
@@ -227,19 +234,41 @@ const ProfileEdit = () => {
                                 }}
                             />
                         </Form.Item>
-                    </Form>
-                </Col>
-                <Col
-                    span={4}
-                    style={{textAlign:'center'}}
-                >
 
-                </Col>
-                <Col span={6}/>
-                <Col span={24} style={{textAlign:'center'}}>
-                    <Button type='primary'>
-                        确认修改
-                    </Button>
+                        <Form.Item
+                            name="residence"
+                            label="省份/高中"
+                            rules={[
+                                {
+                                    type: 'array',
+                                    required: true,
+                                    message: '请选择你的母校与所在省份!',
+                                },
+                            ]}
+                        >
+                            <Cascader
+                                options={options}
+                                loadData={loadData}
+                                onChange={onProvinceAndHighSchoolChange}
+                                changeOnSelect
+                            />
+                        </Form.Item>
+                        <p style={{textAlign:'center'}}>
+                            没找到母校？
+                            <Button type='link'>申请添加生源高中</Button>
+                            |
+                            <Button type='link'>查看申请记录</Button>
+                        </p>
+                        <Form.Item style={{float:'right'}}>
+                            <Button
+                                type='primary'
+                                htmlType='submit'
+                                onClick={onSubmit}
+                            >
+                                确认修改
+                            </Button>
+                        </Form.Item>
+                    </Form>
                 </Col>
             </Row>
         </div>

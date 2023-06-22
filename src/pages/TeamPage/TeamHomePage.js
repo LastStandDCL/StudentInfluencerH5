@@ -1,7 +1,6 @@
 import React from 'react';
-import Globals from "../../Globals";
 import PageTitle from "../../components/PageTitle";
-import {Cascader, Col, Row} from "antd";
+import {Col, Row, Select} from "antd";
 
 const options = [
     {
@@ -29,7 +28,7 @@ const TeamHomePage = () => {
                     <p>活动年份：</p>
                 </Col>
                 <Col span={7} style={{marginTop:'1vh'}}>
-                    <Cascader
+                    <Select
                         style={{width: "20ex"}}
                         options={options}
                         onChange={onYearChange}
