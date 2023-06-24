@@ -87,6 +87,7 @@ const UsernamePasswordLogin = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </Form.Item>
+
                 <Form.Item
                     name="password"
                     rules={[
