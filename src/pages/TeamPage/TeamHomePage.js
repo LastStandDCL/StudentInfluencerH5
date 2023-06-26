@@ -1,5 +1,4 @@
 import React from 'react';
-import Globals from "../../Globals";
 import PageTitle from "../../components/PageTitle";
 import {Cascader, Col, Row} from "antd";
 
@@ -38,6 +37,9 @@ const TeamHomePage = () => {
                     />
                 </Col>
             </Row>
+            <div>
+                044
+            </div>
         </div>
     );
 };
