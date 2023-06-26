@@ -4,6 +4,7 @@ import HomeHeaderBar from "../../components/HomePage/HomeHeaderBar";
 import NewsCard from "../../components/HomePage/NewsCard";
 import NewsList from "../../components/HomePage/NewsList";
 import {FloatButton} from "antd";
+import FooterBar from "../../components/FooterBar";
 
 const NewsPage = () => {
 
@@ -70,6 +71,7 @@ const NewsPage = () => {
                 </div>
             </div>
             <FloatButton.BackTop tooltip={"返回顶部"} visibilityHeight={100}/>
+            <FooterBar/>
         </div>
     );
 };

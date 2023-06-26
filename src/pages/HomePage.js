@@ -12,7 +12,6 @@ const HomePage = () => {
     return (
         <div style={{backgroundColor: colorBgContainer}}>
             <Outlet/>
-            <FooterBar/>
         </div>
     );
 };
